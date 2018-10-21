@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>iGruppi</title>
+    <script src = "https://cdn.jsdelivr.net/npm/web3@0.19.0/dist/web3.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src = "./contract.js"></script>
+		<link rel="stylesheet" type="text/css" href="user.css">
+		<img id = "logo" src = "images/logo.png">  		
+	</head>
+	<body>
+		<div class="container">
+		  <div class="col-md-3">
+	    	<img id = "user" src = "images/user-white.png"> 
+	    </div>
+	    <div class="col-md-9">
+	      <p id="address"><b>Address: </b></p>
+	      <p id="name">Name: </p>
+    		<script type="text/javascript">
+    			document.contractFns.getUser(window.sessionStorage.getItem("address"))
+    				.then(async(data) => {
+    					console.log(data)
+    					document.getElementById("name").innerHTML = await fetch("http://10.57.140.213:8888/api/");
+    				})
+    			document.getElementById("address").innerHTML = window.sessionStorage.getItem("address");
+		  	</script>
+		  	<div class="card text-left">
+	  			<div class="card-header">
+	  				<ul class="nav nav-tabs card-header-tabs">
+	  					<li>
+	  						<a class="nav-link active" id="navCard" href="#">Transazioni</a>
+	  					</li>
+	  				</ul>
+	  			</div>
+		  		<div class="card-body container scroll" id="cardBody">
+		  			<div class="row text-center">
+		  				<div class="col-md-6">
+		  					<img src="https://gateway.ipfs.io/ipfs/QmYJD948teV5V7qywvUkA7TNuF7eQ4Wy38LwBR1aiDyBJa" alt="Css" width="100%" height="100%" /><br>
+		  				</div>
+		  				<div class="col-md-6 description">ciao</div>
+		  			</div>
+		  			<div class="row text-center">
+		  				<div class="col-md-6">
+		  					<img src="https://gateway.ipfs.io/ipfs/QmYJD948teV5V7qywvUkA7TNuF7eQ4Wy38LwBR1aiDyBJa" alt="Css" width="100%" height="100%" /><br>
+		  				</div>
+		  				<div class="col-md-6">ciao</div>
+		  			</div>
+		  			<div class="row text-center">
+		  				<div class="col-md-6">
+		  					<img src="https://gateway.ipfs.io/ipfs/QmYJD948teV5V7qywvUkA7TNuF7eQ4Wy38LwBR1aiDyBJa" alt="Css" width="100%" height="100%" /><br>
+		  				</div>
+		  				<div class="col-md-6">ciao</div>
+		  			</div>
+		  			<div class="row text-center">
+		  				<div class="col-md-6">
+		  					<img src="https://gateway.ipfs.io/ipfs/QmYJD948teV5V7qywvUkA7TNuF7eQ4Wy38LwBR1aiDyBJa" alt="Css" width="100%" height="100%" /><br>
+		  				</div>
+		  				<div class="col-md-6">ciao</div>
+		  			</div>
+		  		</div>
+		  	</div>
+		  </div>
+		</div>
+	</body>
+</html>
